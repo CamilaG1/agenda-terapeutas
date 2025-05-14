@@ -1,7 +1,7 @@
 package org.buffer.agendaterapeutas.service;
 
-import org.buffer.agendaterapeutas.model.Sesion;
+import org.buffer.agendaterapeutas.model.Session;
 
 public interface ISesionService {
-    Sesion createSesion(Sesion sesion) throws Exception;
+    Session createSesion(Session session) throws Exception;
 }

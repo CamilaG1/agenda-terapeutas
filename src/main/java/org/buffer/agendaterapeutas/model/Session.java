@@ -5,43 +5,43 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-public class Sesion {
+public class Session {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idSesion;
+    private Long idSession;
 
     @ManyToOne
     @JoinColumn(name = "id_terapeuta")
-    private User terapeuta;
+    private Therapist terapeuta;
 
     @ManyToOne
     @JoinColumn(name = "id_paciente")
-    private User paciente;
+    private Patient paciente;
 
     private LocalDateTime fechaHoraInicio;
     private LocalDateTime fechaHoraFin;
 
     @Enumerated(EnumType.STRING)
-    private EstadoSesion estado;
+    private SessionStatus estado;
 
     // Constructors
-    public Sesion() {}
+    public Session() {}
 
     // Getters y Setters
-    public String getIdSesion() {
-        return String.valueOf(idSesion);
+    public String getIdSession() {
+        return String.valueOf(idSession);
     }
 
-    public void setIdSesion(Long idSesion) {
-        this.idSesion = idSesion;
+    public void setIdSession(Long idSesion) {
+        this.idSession = idSesion;
     }
 
     public User getTerapeuta() {
         return terapeuta;
     }
 
-    public void setTerapeuta(User terapeuta) {
+    public void setTerapeuta(Therapist terapeuta) {
         this.terapeuta = terapeuta;
     }
 
@@ -49,7 +49,7 @@ public class Sesion {
         return paciente;
     }
 
-    public void setPaciente(User paciente) {
+    public void setPaciente(Patient paciente) {
         this.paciente = paciente;
     }
 
@@ -69,11 +69,11 @@ public class Sesion {
         this.fechaHoraFin = fechaHoraFin;
     }
 
-    public EstadoSesion getEstado() {
+    public SessionStatus getEstado() {
         return estado;
     }
 
-    public void setEstado(EstadoSesion estado) {
+    public void setEstado(SessionStatus estado) {
         this.estado = estado;
     }
 }

@@ -1,10 +1,9 @@
 package org.buffer.agendaterapeutas.controller;
 
 import org.buffer.agendaterapeutas.model.User;
-import org.buffer.agendaterapeutas.repository.UserRepository;
 import org.buffer.agendaterapeutas.service.IUserService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.buffer.agendaterapeutas.vo.UserVO;
+import org.springframework.web.bind.annotation.*;
 
 @RestController("/api/v1/user")
 public class UserController {
@@ -16,7 +15,20 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(User user) throws Exception {
+    public User createUser(@RequestBody User user) throws Exception {
         return userService.createUser(user);
+    }
+
+    @PutMapping
+    public User updateUser(User user) throws Exception {
+        throw new Exception();
+    }
+
+    @DeleteMapping
+    public void deleteUser(User user) throws Exception {}
+
+    @GetMapping("/{userId}")  //api/v1/user/358
+    public UserVO getUserById(@PathVariable Long userId) throws Exception {
+       return new UserVO(userService.getUserById(userId));
     }
 }

@@ -20,4 +20,9 @@ public class UserService implements IUserService {
         }
         return userRepository.save(user);
     }
+
+    @Override
+    public User getUserById(Long id) throws Exception {
+        return userRepository.findById(id).orElseThrow();
+    }
 }
