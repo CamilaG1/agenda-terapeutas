@@ -29,7 +29,7 @@ public class Session {
     public Session() {}
 
     // Getters y Setters
-    public String getIdSession() {
+    public Long getIdSession() {
         return String.valueOf(idSession);
     }
 
