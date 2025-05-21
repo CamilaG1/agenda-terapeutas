@@ -3,9 +3,11 @@ package org.buffer.agendaterapeutas.controller;
 import org.buffer.agendaterapeutas.model.Session;
 import org.buffer.agendaterapeutas.service.ISessionService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/api/v1/session")
+@RestController
+@RequestMapping("/api/v1/session")
 public class SessionController {
 
     private final ISessionService sessionService;

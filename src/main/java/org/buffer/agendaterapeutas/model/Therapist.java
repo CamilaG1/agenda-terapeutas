@@ -1,6 +1,7 @@
 package org.buffer.agendaterapeutas.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
@@ -8,6 +9,7 @@ import java.util.List;
 public class Therapist extends User {
 
     private Specialty specialty;
-    private List<Appointment> appointments;
+    @OneToMany
+    private List<Session> sessions;
 
 }

@@ -30,7 +30,7 @@ public class Session {
 
     // Getters y Setters
     public Long getIdSession() {
-        return String.valueOf(idSession);
+        return idSession;
     }
 
     public void setIdSession(Long idSesion) {

@@ -5,7 +5,8 @@ import org.buffer.agendaterapeutas.service.IUserService;
 import org.buffer.agendaterapeutas.vo.UserVO;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/api/v1/user")
+@RestController
+@RequestMapping("/api/v1/user")
 public class UserController {
 
     private final IUserService userService;
